@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,8 +7,50 @@
     <title>Courier Form</title>
   </head>
   <body>
-    <div>
-      <h1 class="text-green-500">Hello</h1>
+    <div class="bg-indigo-950 p-10 min-h-screen">
+      <div class="bg-white p-5 max-w-xl rounded mx-auto">
+        <h4 class="font-semibold text-2xl">Request a Courier Pickup!</h4>
+        <div class="mt-5 flex space-x-2">
+          <input
+            type="text"
+            name="fullname"
+            id="fullname"
+            class="form-input"
+            placeholder="Name"
+          />
+          <input
+            type="number"
+            name="phonenumber"
+            id="phonenumber"
+            class="form-input"
+            placeholder="Phone Number"
+            min="0"
+          />
+        </div>
+        <div>
+          <input
+            type="date"
+            name="pickUpDate"
+            id="pickUpDate"
+            class="form-input"
+            placeholder="PickUp Date"
+          />
+        </div>
+        <div>
+          <textarea
+            name="pickup-area"
+            id="pickup-area"
+            class="form-input"
+            rows="5"
+            placeholder="Enter your pickup address"
+          ></textarea>
+        </div>
+        <div>
+          <button type="submit" class="px-4 py-1 text-white font-semibold w-full rounded bg-indigo-600 hover:bg-indigo-700">
+            Create Pickup
+          </button>
+        </div>
+      </div>
     </div>
     <script type="module" src="/main.js"></script>
   </body>
