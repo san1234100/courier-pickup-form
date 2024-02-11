@@ -6,7 +6,9 @@
 .form-input{
   @apply px-4 py-1 my-2 bg-gray-200 rounded outline-none w-full;
 }
-
+.form-error{
+  @apply text-sm;
+}
 .table-input{
   @apply px-2 py-1 border;
 }
