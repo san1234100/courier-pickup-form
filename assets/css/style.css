@@ -12,3 +12,7 @@
 .table-input{
   @apply px-2 py-1 border;
 }
+
+.btn{
+  @apply px-4 py-1 text-xs rounded bg-red-500 text-white font-semibold;
+}
