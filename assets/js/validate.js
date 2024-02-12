@@ -1,4 +1,4 @@
-import "./style.css";
+// import "./style.css";
 import JustValidate from "just-validate";
 
 const courierRequestFormEl = document.forms.courierRequestForm;
