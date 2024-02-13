@@ -117,6 +117,9 @@ const courierDataArr=JSON.parse(courierData);
 // console.log(courierDataArr.length);
 
 if(courierDataArr.length>0){
+  const courierCard=document.getElementById('couriercard');
+  courierCard.classList.remove('hidden');
+
   const fragment=document.createDocumentFragment();
   courierDataArr.map(courierData=>{
     // console.log(courierData.fullname);
