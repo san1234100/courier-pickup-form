@@ -134,7 +134,7 @@ if(courierDataArr.length>0){
   td2.classList.add("table-input");
   // pickUpDate element
   const td3=document.createElement('td');
-  td3.textContent=courierData.pickUpDate;
+  td3.textContent=convertDateFormat(courierData.pickUpDate);
   td3.classList.add("table-input");
   // address element
   const td4=document.createElement('td');
@@ -167,3 +167,14 @@ tableEl.addEventListener('click',(event)=>{
     console.log('Delete btn');
   }
 })
+
+function convertDateFormat(val){
+  const myDate=new Date(val);
+  const currentDate=myDate.getDate();
+  const currentMonth=myDate.toLocaleString("en-IN",{
+    month:"short"
+  })
+  const currentYear=myDate.getFullYear();
+  const finalDate=`${currentDate} - ${currentMonth} ${currentYear}`
+   return finalDate;
+}
