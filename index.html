@@ -5,8 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/courier-pickup-form/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Courier Form</title>
-    <script type="module" crossorigin src="/courier-pickup-form/assets/index-DWqjxRuE.js"></script>
-    <link rel="stylesheet" crossorigin href="/courier-pickup-form/assets/index-Lkng13S8.css">
+    <script type="module" crossorigin src="/courier-pickup-form/assets/index-A-qBuUfD.js"></script>
+    <link rel="stylesheet" crossorigin href="/courier-pickup-form/assets/index-COQke9Yb.css">
   </head>
   <body>
     <div class="bg-indigo-950 p-10 min-h-screen">
@@ -66,18 +66,26 @@
       </div>
       
       <!-- Requested data -->
-      <div class="bg-white mt-10 p-5 max-w-2xl rounded mx-auto " id="couriercard">
-        <h4 class="font-semibold text-2xl">Courier Requests</h4>
+      <div class="bg-white mt-10 p-5 max-w-2xl rounded mx-auto hidden" id="couriercard">
+        <div class="flex items-center space-x-2">
+          <h4 class="font-semibold text-2xl">Courier Requests</h4>
+          <span id="couriercount" class="w-7 h-7 flex items-center justify-center  bg-green-500 font-semibold text-sm rounded-full text-white">0</span>
+        </div>
        <div class="my-5 space-x-5">
         <table class="w-full text-center">
-          <tr>
-            <th class="table-input">Customer</th>
-            <th class="table-input">Phone Number</th>
-            <th class="table-input">Pickup Date</th>
-            <th class="table-input">Address</th>
-            <th class="table-input">#Options</th>
-          </tr>
-         
+          <thead>
+            <tr>
+              <th class="table-input">S no</th>
+              <th class="table-input">Customer</th>
+              <th class="table-input">Phone Number</th>
+              <th class="table-input">Pickup Date</th>
+              <th class="table-input">Address</th>
+              <th class="table-input">#Options</th>
+            </tr>
+          </thead>
+         <tbody>
+
+         </tbody>
         </table>
        </div>
       
