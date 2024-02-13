@@ -1,5 +1,6 @@
 import JustValidate from "just-validate";
 
+
 const courierRequestFormEl = document.forms.courierRequestForm;
 const validateForm = new JustValidate(courierRequestFormEl,{
     validateBeforeSubmitting:true
@@ -81,12 +82,6 @@ validateForm
       errorFieldCssClass: ["form-error"], //Adding tailwindcss classes to err msg
     }
   );
-
-
-
-
-
-
 
 
 
@@ -182,9 +177,25 @@ tableEl.append(fragment);
 
 
 tableEl.addEventListener('click',(event)=>{
-  console.log(event.target.parentNode);
+  // console.log(event.target.parentNode);
   if(event.target.textContent==='Delete'){
-    console.log('Delete btn');
+    const isOkToDelete=confirm("It's Ok to delete the request");
+    if(isOkToDelete){
+      // console.log(event.target.parentNode.parentNode);
+    const deleteData=event.target.parentNode.parentNode;
+    console.log(deleteData);
+   const userName=deleteData.children[1].textContent;
+   const getLocalStorage=localStorage.getItem(localStorageKey);
+   const courierRequestArr=JSON.parse(getLocalStorage);
+   const updatedArr=courierRequestArr.filter(val=>val.fullname!=userName)
+    // console.log(updatedArr);
+
+    localStorage.setItem(localStorageKey,JSON.stringify(updatedArr))
+    // To update the courier request
+    tableEl.innerHTML=''
+    getAllCourierData();
+  }
+    // console.log('Delete btn');
   }
 })
 getAllCourierData();
