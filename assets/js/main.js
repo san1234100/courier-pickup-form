@@ -5,6 +5,7 @@ const validateForm = new JustValidate(courierRequestFormEl,{
     validateBeforeSubmitting:true
   });
   const localStorageKey="userData";
+  const tableEl=document.querySelector("table tbody");
 // console.log(validateForm);
 // console.log(courierRequestFormEl);
 
@@ -81,14 +82,24 @@ validateForm
     }
   );
 
+
+
+
+
+
+
+
+
+
+
+
   validateForm.onSuccess((e)=>{
    const formData = new FormData(courierRequestFormEl);
    const data=Object.fromEntries(formData);
   //  for (const val of formData.values()) {
   //   console.log(val);
   //  }
-
-  
+ tableEl.innerHTML='';
   const existingCourierData=localStorage.getItem(localStorageKey);
   // console.log(existingCourierData);
 
@@ -104,10 +115,11 @@ validateForm
     localStorage.setItem(localStorageKey,JSON.stringify(arr))
   }
 alert("Form Successfully Submitted");
+getAllCourierData();
 courierRequestFormEl.reset();
   })
 
-  const tableEl=document.querySelector("table tbody");
+  
 function getAllCourierData(){
   //Get data from local storage
 const courierData=localStorage.getItem(localStorageKey);
@@ -116,14 +128,22 @@ const courierDataArr=JSON.parse(courierData);
 
 // console.log(courierDataArr.length);
 
+//Updating the count of courier request
+document.getElementById('couriercount').textContent=courierDataArr.length;
+
 if(courierDataArr.length>0){
   const courierCard=document.getElementById('couriercard');
   courierCard.classList.remove('hidden');
 
   const fragment=document.createDocumentFragment();
-  courierDataArr.map(courierData=>{
+
+  courierDataArr.map((courierData,index)=>{
     // console.log(courierData.fullname);
   const tr=document.createElement('tr');
+  //S no
+  const tdSerialNumber=document.createElement('td');
+  tdSerialNumber.textContent=index+1;
+  tdSerialNumber.classList.add("table-input");
   // fullName element
   const td1=document.createElement('td');
   td1.textContent=courierData.fullname;
@@ -148,7 +168,7 @@ if(courierDataArr.length>0){
   btnEl.classList.add("btn");
   td5.append(btnEl)
   
-  tr.append(td1,td2,td3,td4,td5);
+  tr.append(tdSerialNumber,td1,td2,td3,td4,td5);
   
   fragment.append(tr);
 })
@@ -158,7 +178,7 @@ tableEl.append(fragment);
 }
 
 }
-getAllCourierData();
+
 
 
 tableEl.addEventListener('click',(event)=>{
@@ -167,7 +187,7 @@ tableEl.addEventListener('click',(event)=>{
     console.log('Delete btn');
   }
 })
-
+getAllCourierData();
 function convertDateFormat(val){
   const myDate=new Date(val);
   const currentDate=myDate.getDate();
