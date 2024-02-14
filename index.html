@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/courier-pickup-form/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Courier app to track your request" />
+    <meta
+      property="og:description"
+      content="Track all your courier request in one place. Just try it!"
+    />
     <title>Courier Form</title>
-    <script type="module" crossorigin src="/courier-pickup-form/assets/index-A-qBuUfD.js"></script>
-    <link rel="stylesheet" crossorigin href="/courier-pickup-form/assets/index-COQke9Yb.css">
+    <script type="module" crossorigin src="/courier-pickup-form/assets/index-BzYwjpBt.js"></script>
+    <link rel="stylesheet" crossorigin href="/courier-pickup-form/assets/index-0BELCU_4.css">
   </head>
   <body>
     <div class="bg-indigo-950 p-10 min-h-screen">
@@ -31,7 +36,6 @@
                 name="phonenumber"
                 id="phonenumber"
                 class="form-input"
-                value="9876543210"
                 placeholder="Phone Number"
                 required
               />
@@ -58,40 +62,46 @@
             ></textarea>
           </div>
           <div>
-            <button type="submit" class="px-4 py-1 text-white font-semibold w-full rounded bg-indigo-600 hover:bg-indigo-700">
+            <button
+              type="submit"
+              class="px-4 py-1 text-white font-semibold w-full rounded bg-indigo-600 hover:bg-indigo-700"
+            >
               Create Pickup
             </button>
           </div>
         </form>
       </div>
-      
+
       <!-- Requested data -->
-      <div class="bg-white mt-10 p-5 max-w-2xl rounded mx-auto hidden" id="couriercard">
+      <div
+        class="bg-white mt-10 p-5 max-w-5xl rounded mx-auto hidden"
+        id="couriercard"
+      >
         <div class="flex items-center space-x-2">
           <h4 class="font-semibold text-2xl">Courier Requests</h4>
-          <span id="couriercount" class="w-7 h-7 flex items-center justify-center  bg-green-500 font-semibold text-sm rounded-full text-white">0</span>
+          <span
+            id="couriercount"
+            class="w-7 h-7 flex items-center justify-center bg-green-500 font-semibold text-sm rounded-full text-white"
+            >0</span
+          >
         </div>
-       <div class="my-5 space-x-5">
-        <table class="w-full text-center">
-          <thead>
-            <tr>
-              <th class="table-input">S no</th>
-              <th class="table-input">Customer</th>
-              <th class="table-input">Phone Number</th>
-              <th class="table-input">Pickup Date</th>
-              <th class="table-input">Address</th>
-              <th class="table-input">#Options</th>
-            </tr>
-          </thead>
-         <tbody>
-
-         </tbody>
-        </table>
-       </div>
-      
-       
+        <div class="my-5 space-x-5">
+          <table class="w-full text-center">
+            <thead>
+              <tr>
+                <th class="table-input">S no</th>
+                <th class="table-input">Customer</th>
+                <th class="table-input">Phone Number</th>
+                <th class="table-input">Pickup Date</th>
+                <th class="table-input">Address</th>
+                <th class="table-input">#Options</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </div>
     </div>
-   
+
   </body>
 </html>
