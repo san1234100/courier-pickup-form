@@ -109,7 +109,7 @@ validateForm
     arr.push(data);
     localStorage.setItem(localStorageKey,JSON.stringify(arr))
   }
-alert("Form Successfully Submitted");
+alert("Your Courier Request Has been Submitted Successfully");
 getAllCourierData();
 courierRequestFormEl.reset();
   })
