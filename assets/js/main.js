@@ -125,9 +125,9 @@ const courierDataArr=JSON.parse(courierData);
 
 //Updating the count of courier request
 document.getElementById('couriercount').textContent=courierDataArr.length;
-
+const courierCard=document.getElementById('couriercard');
 if(courierDataArr.length>0){
-  const courierCard=document.getElementById('couriercard');
+  
   courierCard.classList.remove('hidden');
 
   const fragment=document.createDocumentFragment();
@@ -169,6 +169,7 @@ if(courierDataArr.length>0){
 })
 tableEl.append(fragment);
 }else{
+  courierCard.classList.add('hidden');
   console.log('No Data Found')
 }
 
@@ -179,15 +180,14 @@ tableEl.append(fragment);
 tableEl.addEventListener('click',(event)=>{
   // console.log(event.target.parentNode);
   if(event.target.textContent==='Delete'){
-    const isOkToDelete=confirm("It's Ok to delete the request");
+    const targetuser=event.target.parentNode.parentNode.children[1].textContent;
+    const isOkToDelete=confirm(`Do you want to delete ${targetuser} record`);
     if(isOkToDelete){
-      // console.log(event.target.parentNode.parentNode);
-    const deleteData=event.target.parentNode.parentNode;
-    console.log(deleteData);
-   const userName=deleteData.children[1].textContent;
    const getLocalStorage=localStorage.getItem(localStorageKey);
    const courierRequestArr=JSON.parse(getLocalStorage);
-   const updatedArr=courierRequestArr.filter(val=>val.fullname!=userName)
+
+   //Filter the courier request that not matchs the element to be deleted
+   const updatedArr=courierRequestArr.filter(val=>val.fullname!=targetuser)
     // console.log(updatedArr);
 
     localStorage.setItem(localStorageKey,JSON.stringify(updatedArr))
